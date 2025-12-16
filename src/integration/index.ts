@@ -1,0 +1,53 @@
+import { Router } from 'express';
+import { AppState } from '../index';
+import initialize_integration from './initialize_integration';
+import initialize_stablecoin_token from './initialize_stablecoin_token';
+import transfer_mint_authority from './transfer_mint_authority';
+import initialize_integration_flow from './initialize_integration_flow';
+import get_integration_config from './get_integration_config';
+import update_integration_config from './update_integration_config';
+import get_integrations_by_authority from './get_integrations_by_authority';
+import upload_integration_metadata from './upload_integration_metadata';
+import reveal_api_key from './reveal_api_key';
+import rotate_api_key from './rotate_api_key';
+import whitelist_users from './whitelist_users';
+import get_integration_statistics from './get_integration_statistics';
+import get_integration_events from './get_integration_events';
+import get_historical_integration_stats from './get_historical_integration_stats';
+import get_current_exchange_rate from './get_current_exchange_rate';
+import initialize_integration_vault from './initialize_integration_vault';
+import initialize_user_branded_token from './initialize_user_branded_token';
+import generate_integration_mint_tx from './generate_integration_mint_tx';
+import mint_and_whitelabel from './mint_and_whitelabel';
+import generate_redemption_tx from './generate_redemption_tx';
+import redeem_whitelabeled from './redeem_whitelabeled';
+import generate_claim_tx from './generate_claim_tx';
+
+export function router(state: AppState) {
+  const r = Router();
+  initialize_integration.register(r, state);
+  initialize_stablecoin_token.register(r, state);
+  transfer_mint_authority.register(r, state);
+  initialize_integration_flow.register(r, state);
+  get_integration_config.register(r, state);
+  update_integration_config.register(r, state);
+  get_integrations_by_authority.register(r, state);
+  upload_integration_metadata.register(r, state);
+  reveal_api_key.register(r, state);
+  rotate_api_key.register(r, state);
+  whitelist_users.register(r, state);
+  get_integration_statistics.register(r, state);
+  get_integration_events.register(r, state);
+  get_historical_integration_stats.register(r, state);
+  get_current_exchange_rate.register(r, state);
+  initialize_integration_vault.register(r, state);
+  initialize_user_branded_token.register(r, state);
+  generate_integration_mint_tx.register(r, state);
+  mint_and_whitelabel.register(r, state);
+  generate_redemption_tx.register(r, state);
+  redeem_whitelabeled.register(r, state);
+  generate_claim_tx.register(r, state);
+  return r;
+}
+
+export default { router };
