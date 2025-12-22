@@ -1,37 +1,55 @@
-// health.js
+// src/health/health_check.ts
 
-const express = require('express');
+import { Request, Response } from 'express';
 
 /**
- * GET /health
- * 
- * Mimics the official Reflect API health check endpoint.
- * Always returns 200 OK with a JSON response containing:
- * - success: true
- * - message: "API is running"
- * - timestamp: Current UTC time in ISO 8601 format with milliseconds and 'Z'
+ * Response structure for the `/health` endpoint.
+ * Exactly matches the official Reflect API specification.
  *
- * Example response:
+ * ### Fields
+ * - `success`: Always `true` when the server is healthy.
+ * - `message`: Fixed human-readable status message.
+ * - `timestamp`: Current UTC timestamp in ISO 8601 format with milliseconds and 'Z' suffix.
+ *
+ * ### Example Response
+ * ```json
  * {
  *   "success": true,
  *   "message": "API is running",
- *   "timestamp": "2025-12-22T14:30:45.123Z"
+ *   "timestamp": "2025-12-22T14:30:45.789Z"
  * }
+ * ```
  */
-function healthCheck(req, res) {
-    // Generate current UTC timestamp in the exact format: YYYY-MM-DDTHH:mm:ss.SSSZ
-    const now = new Date();
-    const timestamp = now.toISOString(); // This gives exactly the required format with .SSS and Z
-
-    res.status(200).json({
-        success: true,
-        message: "API is running",
-        timestamp: timestamp
-    });
+export interface HealthResponse {
+  success: true;
+  message: 'API is running';
+  timestamp: string;
 }
 
-// Optional: If you want to mount this as a router
-const router = express.Router();
-router.get('/health', healthCheck);
+/**
+ * GET /health - Health Check Handler
+ *
+ * Mimics the official Reflect API endpoint:
+ *   curl https://prod.api.reflect.money/health
+ *
+ * This endpoint:
+ * - Requires no authentication
+ * - Performs no side effects or external calls
+ * - Always returns HTTP 200 with a healthy JSON response
+ * - Includes a precise UTC timestamp matching Rust's `%Y-%m-%dT%H:%M:%S.%3fZ` format
+ *
+ * The timestamp is generated using `new Date().toISOString()`, which produces
+ * the exact required format: `YYYY-MM-DDTHH:mm:ss.SSSZ`
+ *
+ * @param _req - Express request object (unused)
+ * @param res  - Express response object
+ */
+export function healthCheck(_req: Request, res: Response<HealthResponse>): void {
+  const timestamp = new Date().toISOString();
 
-module.exports = { healthCheck, router };
+  res.status(200).json({
+    success: true,
+    message: 'API is running',
+    timestamp,
+  });
+}
