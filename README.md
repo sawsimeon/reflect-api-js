@@ -31,52 +31,52 @@ All endpoints are currently stubbed with placeholder/mock JSON responses, making
     ├── tsconfig.json 
     ├── src/ 
     │ ├── health/ 
-    │ │ ├── healthCheck.ts 
+    │ │ ├── health_check.ts 
     │ │ └── index.ts 
     │ ├── stablecoin/ 
-    │ │ ├── generateBurnTransaction.ts 
-    │ │ ├── generateMintTransaction.ts 
-    │ │ ├── getAllApy.ts 
-    │ │ ├── getAvailableStablecoins.ts 
-    │ │ ├── getHistoricalApy.ts 
-    │ │ ├── getHistoricalExchangeRates.ts 
-    │ │ ├── getLatestExchangeRates.ts 
-    │ │ ├── getMintRedeemQuote.ts 
-    │ │ ├── getRealtimeExchangeRate.ts 
-    │ │ ├── getSpecificApy.ts 
-    │ │ ├── getSupplyCaps.ts 
+    │ │ ├── generate_burn_transaction.ts 
+    │ │ ├── generate_mint_transaction.ts 
+    │ │ ├── get_all_apy.ts 
+    │ │ ├── get_available_stablecoins.ts 
+    │ │ ├── get_historical_apy.ts 
+    │ │ ├── get_historical_exchange_rates.ts 
+    │ │ ├── get_latest_exchnage_rates.ts 
+    │ │ ├── get_mint_redeem_quote.ts 
+    │ │ ├── get_realtiem_exchange_rate.ts 
+    │ │ ├── get_specific_apy.ts 
+    │ │ ├── get_supply_caps.ts 
     │ │ └── index.ts 
     │ ├── integration/ 
-    │ │ ├── generateClaimTx.ts 
-    │ │ ├── generateIntegrationMintTx.ts 
-    │ │ ├── generateRedemptionTx.ts 
-    │ │ ├── getCurrentExchangeRate.ts 
-    │ │ ├── getHistoricalIntegrationStats.ts 
-    │ │ ├── getIntegrationConfig.ts 
-    │ │ ├── getIntegrationEvents.ts 
-    │ │ ├── getIntegrationStatistics.ts 
-    │ │ ├── getIntegrationsByAuthority.ts 
-    │ │ ├── initializeIntegrationFlow.ts 
-    │ │ ├── initializeIntegrationVault.ts 
-    │ │ ├── initializeIntegration.ts 
-    │ │ ├── initializeStablecoinToken.ts 
-    │ │ ├── initializeUserBrandedToken.ts 
-    │ │ ├── mintAndWhitelabel.ts 
+    │ │ ├── generate_claim_tx.ts 
+    │ │ ├── generate_integration_mint_tx.ts 
+    │ │ ├── generate_redemption_tx.ts 
+    │ │ ├── get_current_exchange_rate.ts 
+    │ │ ├── get_historical_integration_stats.ts 
+    │ │ ├── get_integration_config_.ts 
+    │ │ ├── get_integration_events.ts 
+    │ │ ├── get_integration_statistics.ts 
+    │ │ ├── get_integration_by_authority.ts 
+    │ │ ├── initialize_integration_flow.ts 
+    │ │ ├── initialize_integration_vault.ts 
+    │ │ ├── initialize_integration.ts 
+    │ │ ├── initialize_stablecoin_token.ts 
+    │ │ ├── initialize_user_branded_token.ts 
+    │ │ ├── mint_and_whitelabel.ts 
     │ │ ├── index.ts 
-    │ │ ├── redeemWhitelabeled.ts 
-    │ │ ├── revealApiKey.ts 
-    │ │ ├── rotateApiKey.ts 
-    │ │ ├── transferMintAuthority.ts 
-    │ │ ├── updateIntegrationConfig.ts 
-    │ │ ├── uploadIntegrationMetadata.ts 
-    │ │ └── whitelistUsers.ts 
+    │ │ ├── redeem_whitelabeled.ts 
+    │ │ ├── reveal_api_key.ts 
+    │ │ ├── rotate_api_key.ts 
+    │ │ ├── transfer_mint_authority.ts 
+    │ │ ├── update_integration_config.ts 
+    │ │ ├── upload_integration_metadata.ts 
+    │ │ └── whitelist_users.ts 
     │ ├── stats/ 
-    │ │ ├── getHistoricalTvlAndVolume.ts 
-    │ │ ├── getProtocolStatistics.ts 
+    │ │ ├── get_historical_tvl_and_volume.ts 
+    │ │ ├── get_protocol_statistics.ts 
     │ │ └── index.ts 
     │ └── events/ 
-    │ ├── getEventsBySigner.ts 
-    │ ├── getRecentEvents.ts 
+    │ ├── get_events_by_signer.ts 
+    │ ├── get_recent_events.ts 
     │ └── index.ts 
     ├── README.md
 
