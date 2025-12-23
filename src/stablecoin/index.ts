@@ -35,8 +35,8 @@ import { getRealtimeExchangeRate } from './get_realtime_exchange_rate';
 export function createStablecoinRouter(): Router {
   const router = Router();
 
-  // GET /stablecoin/stablecoins - List all available stablecoins
-  router.get('/stablecoins', getAvailableStablecoins);
+  // GET /stablecoin/types - List all available stablecoins
+  router.get('/types', getAvailableStablecoins);
 
   // GET /stablecoin/supply-caps - Get supply caps for stablecoins
   router.get('/supply-caps', getSupplyCaps);
