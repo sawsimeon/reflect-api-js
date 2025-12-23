@@ -23,10 +23,12 @@ import { getRealtimeExchangeRate } from './get_realtime_exchange_rate';
  *   POST   /stablecoin/mint
  *   POST   /stablecoin/burn
  *   GET    /stablecoin/apy
+ *   GET    /stablecoin/exchange-rates
+ *   GET    /stablecoin/exchange-rates/historical
+ * 
  *   ...
  *
- * Note: No AppState is currently used. If you need shared state later (e.g., config, cache),
- * you can add it as a parameter and close over it in handlers.
+ * Note: All routes are prefixed with /stablecoin in the main application.
  *
  * @returns Configured Express Router
  */
