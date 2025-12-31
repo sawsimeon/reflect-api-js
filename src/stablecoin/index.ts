@@ -54,7 +54,7 @@ export function createStablecoinRouter(): Router {
   router.get('/apy', getAllApy);
 
   // GET /stablecoin/exchange-rates/latest - Latest exchange rates
-  router.get('/exchange-rates/latest', getLatestExchangeRates);
+  router.get('/exchange-rates/latest', getLatestExchangeRates); // optinal 
 
   // GET /stablecoin/exchange-rates/historical - Historical rates
   router.get('/exchange-rates/historical', getHistoricalExchangeRates);
