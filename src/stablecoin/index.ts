@@ -41,8 +41,8 @@ export function createStablecoinRouter(): Router {
   // GET /stablecoin/supply-caps - Get supply caps for stablecoins
   router.get('/supply-caps', getSupplyCaps);
 
-  // POST /stablecoin/quote - Get mint/redeem quote
-  router.post('/quote', getMintRedeemQuote);
+  // POST /stablecoin/quote/:type - Get mint/redeem quote
+  router.post('/quote/:type', getMintRedeemQuote);
 
   // POST /stablecoin/mint - Generate mint transaction
   router.post('/mint', generateMintTransaction);
