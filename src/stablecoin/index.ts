@@ -65,8 +65,8 @@ export function createStablecoinRouter(): Router {
   // GET /stablecoin/apy/historical - Historical APY data
   router.get('/:index/apy/historical', getHistoricalApy);
 
-  // GET /stablecoin/exchange-rate/realtime - Realtime rate for a pair
-  router.get('/exchange-rate/realtime', getRealtimeExchangeRate);
+  // GET /stablecoin//:index/exchange-rate - Realtime rate for a pair
+  router.get('/:index/exchange-rate', getRealtimeExchangeRate);
 
   return router;
 }
